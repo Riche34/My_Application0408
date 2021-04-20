@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity(), ExampleAdapter.OnItemClickListener {
         setContentView(R.layout.activity_main)
         val recyclerView: RecyclerView = findViewById(R.id.recycler_view)
         val test = 50
-
+        val master =70
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)

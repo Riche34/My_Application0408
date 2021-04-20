@@ -28,6 +28,9 @@ class ExampleAdapter(
         val currentItem = exampleList[position]
 
         //holder.itemVIew..이렇게도 사용 가능함 다만 비효율적
+        //holder.itemVIew..이렇게도 사용 가능함 다만 비효율적
+        //holder.itemVIew..이렇게도 사용 가능함 다만 비효율적
+        //holder.itemVIew..이렇게도 사용 가능함 다만 비효율적
 
         holder.imageView.setImageResource(currentItem.imageResource)
         holder.textView1.text = currentItem.text1

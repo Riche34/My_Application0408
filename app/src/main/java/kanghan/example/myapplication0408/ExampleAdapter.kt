@@ -13,11 +13,13 @@ import androidx.recyclerview.widget.RecyclerView
 class ExampleAdapter(
     private val exampleList: List<ExampleItem>,
     private val listener: OnItemClickListener
-): RecyclerView.Adapter<ExampleAdapter.ExampleViewHolder>() {
+) : RecyclerView.Adapter<ExampleAdapter.ExampleViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExampleViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.example_item,
-        parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(
+            R.layout.example_item,
+            parent, false
+        )
 
         return ExampleViewHolder(itemView)
     }
@@ -30,10 +32,10 @@ class ExampleAdapter(
         holder.imageView.setImageResource(currentItem.imageResource)
         holder.textView1.text = currentItem.text1
         holder.textView2.text = currentItem.text2
- 
-        if (position ==0) {
+
+        if (position == 0) {
             holder.textView1.setBackgroundColor(Color.YELLOW)
-        } else{
+        } else {
 
         }
         //holder.itemView.text_view1.text = currentItem.text1
@@ -41,8 +43,8 @@ class ExampleAdapter(
 
     override fun getItemCount() = exampleList.size
 
-    inner class ExampleViewHolder(itemView: View): RecyclerView.ViewHolder(itemView),
-    View.OnClickListener{
+    inner class ExampleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
+        View.OnClickListener {
         val imageView: ImageView = itemView.findViewById(R.id.image_view)
         val textView1: TextView = itemView.findViewById(R.id.text_view_1)
         val textView2: TextView = itemView.findViewById(R.id.text_view_2)
@@ -50,6 +52,7 @@ class ExampleAdapter(
         init {
             itemView.setOnClickListener(this)
         }
+
         override fun onClick(v: View?) {
             val position = adapterPosition
             if (position != RecyclerView.NO_POSITION) {
